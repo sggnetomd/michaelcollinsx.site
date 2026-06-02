@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Michael Collins</title>
+
+  <!-- =============================================================== -->
+  <!-- ⚙️  CONFIG DO FUNIL — EDITE AQUI                                -->
+  <!-- =============================================================== -->
+  <script>
+    window.FUNNEL_CONFIG = {
+      checkoutLink: "https://d2-info.mycartpanda.com/ckt/xj4vgQ",
+      ctaText: "I WANT TO MAKE HIM CRAZY ABOUT ME",
+      revealAtSeconds: 1382   // backup (≈23min). O primário é o VTurb (classe esconderbutton)
+    };
+  </script>
+  <!-- Player VTurb: troque o id e o src do player.js abaixo se mudar o vídeo -->
+  <!-- =============================================================== -->
+
+  <!-- ===== MICROSOFT CLARITY (heatmap / gravacoes — diagnostico) ===== -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wx1hiq2rnm");
+  </script>
+
+  <!-- ===== PRECONNECTS / PRELOADS (performance VTurb) ===== -->
+  <link rel="preconnect" href="https://scripts.converteai.net" />
+  <link rel="preconnect" href="https://cdn.converteai.net" />
+  <link rel="preconnect" href="https://images.converteai.net" />
+  <link rel="dns-prefetch" href="https://m3u8.vturb.net" />
+  <link rel="dns-prefetch" href="https://license.vturb.com" />
+  <link rel="preload" as="script"
+    href="https://scripts.converteai.net/65eee9f4-ec2d-46b0-a2b3-9b1ecf0653c2/ab-test/69cb4ee82b2f7ad133a0e330/player.js" />
+  <link rel="preload" as="script"
+    href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" />
+
+  <!-- ===== CHECKOUT WARM-UP (abre mais rápido, SEM risco antifraud) =====
+       preconnect = só handshake DNS/TCP/TLS antecipado. NAO faz request
+       ao checkout (evita flag do Kasada/Turnstile). Troque o host se mudar de loja. -->
+  <link rel="preconnect" href="https://d2-info.mycartpanda.com" crossorigin />
+  <link rel="dns-prefetch" href="https://d2-info.mycartpanda.com" />
+
+  <!-- Fonte Roboto -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #ffffff;
+      font-family: 'Roboto', Arial, sans-serif;
+      color: #111;
+      -webkit-text-size-adjust: 100%;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ===== BARRA DE ESCASSEZ ===== */
+    .scarcity-bar {
+      width: 100%;
+      background: #ff0000;
+      color: #fff;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 7px 10px;
+      line-height: 1.2;
+    }
+    .scarcity-bar strong { font-weight: 900; }
+
+    /* ===== CONTAINER PRINCIPAL ===== */
+    .wrap {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 0 12px 40px;
+      text-align: center;
+    }
+
+    /* ===== PLAYER ===== */
+    .player-area { margin-top: 6px; }
+    vturb-smartplayer {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    /* ===== BOTÃO CTA (escondido até 23min de vídeo) =====
+       SEM !important de proposito: o VTurb pode revelar de 2 formas
+       (removendo a classe OU setando display inline). Sem !important,
+       ambos os caminhos revelam o botao corretamente. */
+    .esconderbutton { display: none; }
+
+    .cta-area { margin: 18px 0 4px; }
+    .cta-btn {
+      display: block;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      background: #00be1a;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.25;
+      padding: 18px 14px;
+      border-radius: 8px;
+      box-shadow: 0 4px 0 rgba(0,0,0,0.18);
+      cursor: pointer;
+      animation: pulse 1.4s infinite;
+      -webkit-user-select: none; user-select: none;
+    }
+    .cta-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 rgba(0,0,0,0.18); }
+    @keyframes pulse {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+
+    /* ===== WATCHING NOW ===== */
+    .watching {
+      margin: 16px 0 4px;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .watching .count { color: #ff0000; font-weight: 900; }
+
+    /* ===== MEDIA BADGES ===== */
+    .media-badge { margin: 10px auto 0; }
+    .media-badge img { max-width: 360px; width: 100%; height: auto; display: block; margin: 0 auto; }
+
+    /* ===== AUTOR ===== */
+    .author { margin-top: 34px; padding-top: 26px; border-top: 1px solid #eee; }
+    .author-photo {
+      width: 150px; height: 150px; border-radius: 50%;
+      object-fit: cover; margin: 0 auto 14px; display: block;
+    }
+    .author-name { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+    .author-bio { font-size: 15px; line-height: 1.55; color: #333; max-width: 380px; margin: 0 auto 16px; }
+    .author-sign img { max-width: 190px; width: 70%; height: auto; }
+
+    /* ===== FOOTER ===== */
+    .footer { margin-top: 30px; font-size: 12px; color: #888; line-height: 1.6; }
+    .footer a { color: #888; text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <!-- BARRA DE ESCASSEZ (data = hoje, gerada via JS) -->
+  <div class="scarcity-bar">
+    Video available until <strong id="scarcity-date">—</strong>
+  </div>
+
+  <div class="wrap">
+
+    <!-- PLAYER VTURB (A/B test) -->
+    <div class="player-area">
+      <vturb-smartplayer
+        id="ab-69cb4ee82b2f7ad133a0e330"
+        style="display:block;margin:0 auto;width:100%;max-width:400px;">
+      </vturb-smartplayer>
+    </div>
+
+    <!-- BOTÃO CTA — escondido até 23min (VTurb remove a classe esconderbutton) -->
+    <div class="cta-area esconderbutton" id="cta-wrap">
+      <a href="https://d2-info.mycartpanda.com/ckt/xj4vgQ"
+         class="cta-btn"
+         id="cta">
+        I WANT TO MAKE HIM CRAZY ABOUT ME
+      </a>
+    </div>
+
+    <!-- WATCHING NOW -->
+    <p class="watching">
+      <span class="count" id="watch-count">512</span> people watching now
+    </p>
+
+    <!-- MEDIA BADGES -->
+    <div class="media-badge">
+      <img src="../assets/media.png" alt="We're in the media" loading="lazy" />
+    </div>
+
+    <!-- AUTOR -->
+    <div class="author">
+      <img class="author-photo" src="../assets/author.png" alt="Michael Collins" loading="lazy" />
+      <div class="author-name">Michael Collins</div>
+      <p class="author-bio">
+        A relationship expert with over 12 years of experience, Michael has more than 2 million
+        followers on Instagram and has personally helped over 1 million women achieve happy and
+        lasting relationships. He teaches the secrets to a fun and pleasurable intimate life and
+        the power of female self-confidence.
+      </p>
+      <div class="author-sign">
+        <img src="../assets/signature.png" alt="Michael Collins" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      Copyright 2026 - Michael Collins &reg;<br />
+      All rights reserved<br />
+      <a href="../terms.html">Terms of use</a> &middot; <a href="../privacy.html">Privacy</a>
+    </div>
+
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- VTURB PLAYER LOADER                                           -->
+  <!-- ============================================================= -->
+  <script type="text/javascript">
+    (function () {
+      var s = document.createElement("script");
+      s.src = "https://scripts.converteai.net/65eee9f4-ec2d-46b0-a2b3-9b1ecf0653c2/ab-test/69cb4ee82b2f7ad133a0e330/player.js";
+      s.async = true;
+      document.head.appendChild(s);
+    })();
+  </script>
+
+  <!-- ============================================================= -->
+  <!-- LÓGICA DA PÁGINA (limpa, sem interceptor de clique)           -->
+  <!-- ============================================================= -->
+  <script type="text/javascript">
+    (function () {
+      var CFG = window.FUNNEL_CONFIG || {};
+
+      /* ---------- 0) APLICA CONFIG NO BOTÃO ---------- */
+      try {
+        var cta = document.getElementById("cta");
+        if (CFG.checkoutLink) cta.setAttribute("href", CFG.checkoutLink);
+        if (CFG.ctaText) cta.textContent = CFG.ctaText;
+      } catch (e) {}
+
+      /* ---------- 1) DATA DE ESCASSEZ = HOJE (MM/DD/YYYY) ---------- */
+      try {
+        var d = new Date();
+        var mm = String(d.getMonth() + 1).padStart(2, "0");
+        var dd = String(d.getDate()).padStart(2, "0");
+        document.getElementById("scarcity-date").textContent = mm + "/" + dd + "/" + d.getFullYear();
+      } catch (e) {}
+
+      /* ---------- 2) CONTADOR "WATCHING NOW" (random 400-700) ---------- */
+      try {
+        var min = 400, max = 700;
+        var n = Math.floor(Math.random() * (max - min + 1)) + min;
+        var el = document.getElementById("watch-count");
+        el.textContent = n;
+        setInterval(function () {
+          n += (Math.random() < 0.5 ? -1 : 1) * (Math.floor(Math.random() * 3));
+          if (n < min) n = min; if (n > max) n = max;
+          el.textContent = n;
+        }, 8000);
+      } catch (e) {}
+
+      /* ---------- 3) ENCAMINHA UTMs DO ANÚNCIO PRO CHECKOUT ---------- */
+      try {
+        var a = document.getElementById("cta");
+        var base = a.getAttribute("href");
+        var qs = window.location.search;
+        if (qs && qs.length > 1) {
+          base += (base.indexOf("?") > -1 ? "&" : "?") + qs.slice(1);
+          a.setAttribute("href", base);
+        }
+      } catch (e) {}
+
+      /* ---------- 4) REVELAÇÃO DO BOTÃO ----------
+         PRIMÁRIO: VTurb remove a classe "esconderbutton" no tempo configurado.
+         BACKUP:   poller pela API do smartplayer.
+         QA:       ?reveal=1 (na hora) | ?reveal=10 (após 10s). */
+      var REVEAL_AT = CFG.revealAtSeconds || 1382;
+      var revealed = false;
+
+      function revealButton() {
+        if (revealed) return;
+        revealed = true;
+        var els = document.querySelectorAll(".esconderbutton");
+        for (var i = 0; i < els.length; i++) els[i].classList.remove("esconderbutton");
+      }
+
+      var params = new URLSearchParams(window.location.search);
+      if (params.has("reveal")) {
+        var rv = params.get("reveal");
+        if (rv === "1" || rv === "" || rv === "true") revealButton();
+        else { var secs = parseInt(rv, 10); if (!isNaN(secs)) setTimeout(revealButton, secs * 1000); }
+      }
+
+      /* FALLBACK GARANTIDO (estilo Heuler): timer em ms desde o load.
+         Rede de seguranca caso o VTurb (esconderbutton) e o poller falhem.
+         Idempotente — se outro caminho ja revelou, isto nao faz nada. */
+      setTimeout(revealButton, REVEAL_AT * 1000);
+
+      var tries = 0;
+      var poll = setInterval(function () {
+        if (revealed) { clearInterval(poll); return; }
+        tries++;
+        if (tries > 3000) { clearInterval(poll); return; }
+        try {
+          var sp = window.smartplayer;
+          var inst = sp && sp.instances && sp.instances.length ? sp.instances[0] : null;
+          if (inst) {
+            var t = null;
+            if (typeof inst.currentTime === "function") t = inst.currentTime();
+            else if (typeof inst.currentTime === "number") t = inst.currentTime;
+            else if (inst.video && typeof inst.video.currentTime === "number") t = inst.video.currentTime;
+            if (t != null && t >= REVEAL_AT) revealButton();
+          }
+        } catch (e) {}
+      }, 1000);
+
+    })();
+  </script>
+
+  <!-- ============================================================= -->
+  <!-- UTMIFY UTMs (latest.js) — captura UTM. NAO bloqueia clique.   -->
+  <!-- ============================================================= -->
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    data-utmify-ignore-iframe
+    data-utmify-is-cartpanda
+    async
+    defer
+  ></script>
+
+  <!-- ============================================================= -->
+  <!-- UTMIFY PIXEL (pixel.js) — exigido pela UTMify em TODAS pgs.   -->
+  <!-- Com botao <a> nativo numa pagina limpa: clique ~36ms.        -->
+  <!-- Se travar no MOBILE, desative "Envio de Initiate Checkout"   -->
+  <!-- no painel UTMify (pixel segue trackeando; IC vai do checkout)-->
+  <!-- ============================================================= -->
+  <script>
+    window.pixelId = "6a1a4722a06388c227fc3c46";
+    (function () {
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    })();
+  </script>
+
+</body>
+</html>
