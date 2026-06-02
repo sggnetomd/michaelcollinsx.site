@@ -14,7 +14,7 @@
        ║                         • embed       → no <body>            ║
        ║  2. LINK CHECKOUT    → no <a id="cta" href="AQUI">           ║
        ║  3. TEXTO DO BOTÃO   → dentro do <a id="cta">TEXTO</a>       ║
-       ║  4. TEMPO DO BOTÃO   → const REVEAL_AT (no script de baixo)  ║
+       ║  4. TEMPO DO BOTÃO   → definido NO VTURB (por variante A/B)  ║
        ║  5. TRACKING         → bloco [TRACKING] no fim do <body>     ║
        ╚══════════════════════════════════════════════════════════════╝ -->
 
@@ -114,7 +114,7 @@
     <!-- ╔═══ BOTÃO CTA ═══╗
          ║ LINK CHECKOUT → href abaixo                          ║
          ║ TEXTO DO BOTÃO → entre <a>...</a>                    ║
-         ║ (fica escondido até o pitch — ver REVEAL_AT no fim)  ║
+         ║ (escondido até o pitch — tempo vem do VTurb por variante)║
          ╚═════════════════╝ -->
     <div class="cta-area esconderbutton" id="cta-wrap">
       <a href="https://d2-info.mycartpanda.com/ckt/xj4vgQ" class="cta-btn" id="cta">
@@ -147,12 +147,9 @@
 
   </div>
 
-  <!-- ═══════════════ LÓGICA DA PÁGINA (não precisa mexer, exceto REVEAL_AT) ═══════════════ -->
+  <!-- ═══════════════ LÓGICA DA PÁGINA (não precisa mexer) ═══════════════ -->
   <script type="text/javascript">
     (function () {
-
-      /* ►►► TEMPO DO BOTÃO: segundos de vídeo até o pitch (1382 = ~23min) ◄◄◄ */
-      var REVEAL_AT = 1382;
 
       /* data de escassez = hoje */
       try { var d=new Date(), mm=String(d.getMonth()+1).padStart(2,"0"), dd=String(d.getDate()).padStart(2,"0");
@@ -167,27 +164,17 @@
       try { var a=document.getElementById("cta"), base=a.getAttribute("href"), qs=window.location.search;
         if(qs&&qs.length>1){ base+=(base.indexOf("?")>-1?"&":"?")+qs.slice(1); a.setAttribute("href",base); } } catch(e){}
 
-      /* revelação do botão: VTurb (esconderbutton) + timer MS + poller + ?reveal QA */
-      var revealed=false;
-      function revealButton(){ if(revealed)return; revealed=true;
-        var els=document.querySelectorAll(".esconderbutton"); for(var i=0;i<els.length;i++) els[i].classList.remove("esconderbutton"); }
-
+      /* ►►► REVELAÇÃO DO BOTÃO ◄◄◄
+         O TEMPO é definido DENTRO do VTurb, por VARIANTE do A/B test
+         (cada VSL tem seu pitch). O VTurb remove a classe "esconderbutton"
+         no tempo certo de CADA variante. A página NAO fixa tempo de proposito
+         — um tempo fixo quebraria o A/B. Só QA: ?reveal=1 mostra na hora. */
+      function revealNow(){ var els=document.querySelectorAll(".esconderbutton");
+        for(var i=0;i<els.length;i++) els[i].classList.remove("esconderbutton"); }
       var p=new URLSearchParams(window.location.search);
       if(p.has("reveal")){ var rv=p.get("reveal");
-        if(rv==="1"||rv===""||rv==="true") revealButton();
-        else { var sc=parseInt(rv,10); if(!isNaN(sc)) setTimeout(revealButton,sc*1000); } }
-
-      /* fallback garantido (estilo Heuler): timer em ms desde o load */
-      setTimeout(revealButton, REVEAL_AT*1000);
-
-      /* preciso (se a API do player expuser o tempo): revela no tempo real do vídeo */
-      var tries=0, poll=setInterval(function(){ if(revealed){clearInterval(poll);return;} if(++tries>3000){clearInterval(poll);return;}
-        try{ var sp=window.smartplayer, inst=sp&&sp.instances&&sp.instances.length?sp.instances[0]:null;
-          if(inst){ var t=null;
-            if(typeof inst.currentTime==="function") t=inst.currentTime();
-            else if(typeof inst.currentTime==="number") t=inst.currentTime;
-            else if(inst.video&&typeof inst.video.currentTime==="number") t=inst.video.currentTime;
-            if(t!=null&&t>=REVEAL_AT) revealButton(); } }catch(e){} },1000);
+        if(rv==="1"||rv===""||rv==="true") revealNow();
+        else { var sc=parseInt(rv,10); if(!isNaN(sc)) setTimeout(revealNow, sc*1000); } }
 
     })();
   </script>
