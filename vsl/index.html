@@ -177,8 +177,9 @@
     (function () {
 
       /* data de escassez = hoje */
-      try { var d=new Date(), mm=String(d.getMonth()+1).padStart(2,"0"), dd=String(d.getDate()).padStart(2,"0");
-        document.getElementById("scarcity-date").textContent = mm+"/"+dd+"/"+d.getFullYear(); } catch(e){}
+      try { var d=new Date(),
+        M=["January","February","March","April","May","June","July","August","September","October","November","December"];
+        document.getElementById("scarcity-date").textContent = M[d.getMonth()]+" "+d.getDate()+", "+d.getFullYear(); } catch(e){}
 
       /* contador "watching now" (random 400-700) */
       try { var min=400,max=700,n=Math.floor(Math.random()*(max-min+1))+min, el=document.getElementById("watch-count");
